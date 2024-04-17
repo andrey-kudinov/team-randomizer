@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Randomizer</title>
+    <style>
+      html {
+        overflow: hidden;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding-top: 16px;
+        background: white;
+        height: 100svh;
+        box-sizing: border-box;
+      }
+
+      .checkboxes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+      }
+
+      .canvas-container {
+        height: 100%;
+        width: 100%;
+      }
+
+      canvas {
+        background: black;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="checkboxes">
+      <label><input type="checkbox" checked>Андрей</label>
+      <label><input type="checkbox" checked>Никита</label>
+      <label><input type="checkbox" checked>Аня</label>
+      <label><input type="checkbox" checked>Зефирка</label>
+      <label><input type="checkbox" checked>Герман</label>
+      <label><input type="checkbox" checked>Антон</label>
+      <label><input type="checkbox" checked>Максим</label>
+      <label><input type="checkbox">Игрок 1</label>
+      <label><input type="checkbox">Игрок 2</label>
+      <label><input type="checkbox">Игрок 3</label>
+    </div>
+    <button>Randomize!</button>
+    <div class="canvas-container">
+      <canvas></canvas>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

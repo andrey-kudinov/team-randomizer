@@ -4,7 +4,7 @@
   margin: 10px;
 }
 
-.button-wrapper button {
+.button-wrapper .button {
   color: white;
   font-family: Helvetica, sans-serif;
   font-weight: bold;
@@ -31,7 +31,7 @@
   border-radius: 5px;
 }
 
-.button-wrapper button:active {
+.button-wrapper:active .button {
   top: 10px;
   background-color: rgb(0, 150, 0);
 

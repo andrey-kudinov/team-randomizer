@@ -30,13 +30,13 @@ const draw = () => {
       circleA.dx = 0;
       circleA.dy = 0;
 
+      const label = Array.from(checkboxes).find(checkbox => checkbox.parentElement.textContent === circleA.name).parentElement;
+
       if (Math.pow(circleA.x, 2) + Math.pow(circleA.y - canvas.height / 2, 2) < Math.pow(seeker, 2)) {
-        const label = checkboxes[i].parentElement;
         label.style.color = 'red';
       }
 
       if (Math.pow(circleA.x - canvas.width, 2) + Math.pow(circleA.y - canvas.height / 2, 2) < Math.pow(seeker, 2)) {
-        const label = checkboxes[i].parentElement;
         label.style.color = 'blue';
       }
     } else {
@@ -95,9 +95,9 @@ const draw = () => {
 const handleCheckboxes = () => {
   const names = [];
   checkboxes.forEach(checkbox => {
+    const label = checkbox.parentElement;
+    label.style.color = 'black';
     if (checkbox.checked) {
-      const label = checkbox.parentElement;
-      label.style.color = 'black';
       names.push(label.textContent);
     }
   });

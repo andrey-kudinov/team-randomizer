@@ -101,7 +101,7 @@
 }
 
 @media (max-width: 768px) {
-  .button-82-pushable:hover .button-82-front {
+  .active.button-82-pushable .button-82-front {
     transform: translateY(-2px);
     transition: transform 34ms;
   }
@@ -131,7 +131,7 @@
 }
 
 @media (max-width: 768px) {
-  .button-82-pushable:hover .button-82-shadow {
+  .active.button-82-pushable .button-82-shadow {
     transform: translateY(1px);
     transition: transform 34ms;
   }

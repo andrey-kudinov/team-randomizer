@@ -124,3 +124,6 @@ button.onclick = () => {
   handleCheckboxes();
   draw();
 };
+
+button.ontouchstart = () => button.classList.add('active');
+button.ontouchend = () => button.classList.remove('active');

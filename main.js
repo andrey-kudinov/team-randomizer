@@ -50,21 +50,30 @@ const draw = () => {
 
     for (let j = i + 1; j < circles.length; j++) {
       let circleB = circles[j];
+    
       let dx = circleB.x - circleA.x;
       let dy = circleB.y - circleA.y;
       let distance = Math.sqrt(dx * dx + dy * dy);
-
+    
       if (distance < radius * 2) {
-        // Если шарики двигаются в разных направлениях по оси X, меняем направление движения по этой оси
-        if ((circleA.dx > 0 && circleB.dx < 0) || (circleA.dx < 0 && circleB.dx > 0)) {
-          circleA.dx = -circleA.dx;
+        if (circleA.dx === 0 && circleA.dy === 0) {
           circleB.dx = -circleB.dx;
-        }
-      
-        // Если шарики двигаются в разных направлениях по оси Y, меняем направление движения по этой оси
-        if ((circleA.dy > 0 && circleB.dy < 0) || (circleA.dy < 0 && circleB.dy > 0)) {
-          circleA.dy = -circleA.dy;
           circleB.dy = -circleB.dy;
+        }
+        else if (circleB.dx === 0 && circleB.dy === 0) {
+          circleA.dx = -circleA.dx;
+          circleA.dy = -circleA.dy;
+        }
+        else {
+          if ((circleA.dx > 0 && circleB.dx < 0) || (circleA.dx < 0 && circleB.dx > 0)) {
+            circleA.dx = -circleA.dx;
+            circleB.dx = -circleB.dx;
+          }
+        
+          if ((circleA.dy > 0 && circleB.dy < 0) || (circleA.dy < 0 && circleB.dy > 0)) {
+            circleA.dy = -circleA.dy;
+            circleB.dy = -circleB.dy;
+          }
         }
       }
     }

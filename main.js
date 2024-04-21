@@ -127,3 +127,24 @@ button.onclick = () => {
 
 button.ontouchstart = () => button.classList.add('active');
 button.ontouchend = () => button.classList.remove('active');
+
+canvas.addEventListener('click', function(event) {
+  const rect = canvas.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+  const clickRadius = radius * 1.5;
+
+  const clickedCircle = circles.find(circle => {
+    const distance = Math.sqrt(Math.pow(x - circle.x, 2) + Math.pow(y - circle.y, 2));
+    return distance < clickRadius;
+  });
+
+  if (clickedCircle) {
+    circles = circles.filter(circle => circle !== clickedCircle);
+    const dx = (Math.random() - 0.5) * 10;
+    const dy = (Math.random() - 0.5) * 10;
+    const x = Math.random() * (canvas.width - 2 * radius) + radius;
+    const y = Math.random() * (canvas.height - 2 * radius) + radius;
+    circles.push({ x, y, dx, dy, name: clickedCircle.name, color: clickedCircle.color });
+  }
+});

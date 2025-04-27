@@ -10,8 +10,8 @@ const ctx = canvas.getContext('2d');
 
 let circles = [];
 let canvasId;
-const radius = window.innerWidth > 600 ? 30 : 15;
-const seeker = window.innerWidth > 600 ? radius * 8 : radius * 7;
+const radius = window.innerWidth > 600 ? 30 : 10;
+const seeker = window.innerWidth > 600 ? radius * 8 : radius * 10;
 const colors = ['#800000', '#008000', '#000080', '#808000', '#800080', '#008080', '#2F4F4F', '#696969', '#A52A2A', '#8B4513'];
 
 const draw = () => {
